@@ -8,6 +8,11 @@ import edu.macalester.turtle.Turtle;
 import edu.macalester.turtle.TurtleProgram;
 
 public class TurtleArmada extends TurtleProgram {
+
+    public static void main(String... args) {
+        new TurtleArmada();
+    }
+
     public void run() {
         List<Turtle> turtles = new ArrayList<Turtle>();
         for(int n = 1; n < 101; n++) {

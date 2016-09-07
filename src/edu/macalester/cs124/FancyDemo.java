@@ -6,6 +6,11 @@ import edu.macalester.turtle.Turtle;
 import edu.macalester.turtle.TurtleProgram;
 
 public class FancyDemo extends TurtleProgram {
+
+    public static void main(String... args) {
+        new FancyDemo();
+    }
+
     public void run() {
         Turtle turtle = new Turtle(getWidth() * 0.5, getHeight() * 0.8, Color.BLUE);
         add(turtle);

@@ -11,6 +11,11 @@ import edu.macalester.turtle.TurtleProgram;
 
 
 public class Spiral extends TurtleProgram {
+
+    public static void main(String... args) {
+        new Spiral();
+    }
+
     public void run() {
         setTurtleSpeedFactor(0);
         

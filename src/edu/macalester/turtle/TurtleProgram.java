@@ -15,9 +15,10 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
+import javax.swing.JComponent;
+import javax.swing.JFrame;
+import javax.swing.JWindow;
 import javax.swing.Timer;
-
-import acm.program.Program;
 
 /**
  * Base class for applets rendering turtle graphics to the screen.
@@ -31,7 +32,7 @@ import acm.program.Program;
  * @see Turtle
  * @author Paul Cantrell
  */
-public abstract class TurtleProgram extends Program implements TurtleObserver {
+public abstract class TurtleProgram extends JComponent implements TurtleObserver {
     
     private BufferedImage paper;
     private Graphics2D paperGraphics;
@@ -42,14 +43,23 @@ public abstract class TurtleProgram extends Program implements TurtleObserver {
     private Timer updateTimer;
     private double turtleSpeedFactor;
     private boolean turtlesVisible = true;
-    
-    
+
+    public TurtleProgram() {
+        startHook();
+        JFrame window = new JFrame();
+        window.setSize(getSize());
+        window.add(this);
+        window.setVisible(true);
+        run();
+    }
+
     // ------ Setup ------
+
+    public abstract void run();
     
-    @Override
     public void startHook() {
-        setBackground(Color.WHITE);
-        
+        setSize(640, 640);
+
         initPaper();
         initTurtleDisplay();
         setTurtleSpeedFactor(1000);
@@ -205,8 +215,7 @@ public abstract class TurtleProgram extends Program implements TurtleObserver {
         paintNeeded = true;
     }
     
-    @Override
-    public void paint(Graphics g) {
+    public void paintComponent(Graphics g) {
         Graphics2D g2 = (Graphics2D) g;
         enableAntialiasing(g2);
         
