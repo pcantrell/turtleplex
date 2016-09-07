@@ -19,7 +19,6 @@ import java.util.Set;
 
 import javax.swing.JComponent;
 import javax.swing.JFrame;
-import javax.swing.JWindow;
 import javax.swing.Timer;
 
 /**

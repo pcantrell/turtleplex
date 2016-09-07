@@ -1,12 +1,12 @@
 package edu.macalester.turtle;
 
-import static java.lang.Math.PI;
-import static java.lang.Math.cos;
-import static java.lang.Math.sin;
-
 import java.awt.Color;
 import java.util.ArrayList;
 import java.util.List;
+
+import static java.lang.Math.PI;
+import static java.lang.Math.cos;
+import static java.lang.Math.sin;
 
 /**
  * A system for drawing vector graphics using relative positioning.

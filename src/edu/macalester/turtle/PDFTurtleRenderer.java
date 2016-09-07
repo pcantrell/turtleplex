@@ -1,13 +1,13 @@
 package edu.macalester.turtle;
 
-import java.io.FileOutputStream;
-
 import com.itextpdf.awt.geom.AffineTransform;
 import com.itextpdf.text.BaseColor;
 import com.itextpdf.text.Document;
 import com.itextpdf.text.Rectangle;
 import com.itextpdf.text.pdf.PdfContentByte;
 import com.itextpdf.text.pdf.PdfWriter;
+
+import java.io.FileOutputStream;
 
 public class PDFTurtleRenderer implements TurtleObserver {
     private final Document document;

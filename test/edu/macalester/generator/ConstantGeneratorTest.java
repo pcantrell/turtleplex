@@ -1,8 +1,8 @@
 package edu.macalester.generator;
 
-import static org.junit.Assert.*;
-
 import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
 
 public class ConstantGeneratorTest {
     @Test
