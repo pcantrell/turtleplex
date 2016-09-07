@@ -2,9 +2,11 @@ package edu.macalester.turtle;
 
 import java.awt.BasicStroke;
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.RenderingHints;
+import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.geom.AffineTransform;
@@ -58,7 +60,9 @@ public abstract class TurtleProgram extends JComponent implements TurtleObserver
     public abstract void run();
     
     public void startHook() {
-        setSize(640, 640);
+        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+        int size = (int) Math.min(screenSize.getWidth(), screenSize.getHeight());
+        setSize(size, size);
 
         initPaper();
         initTurtleDisplay();
